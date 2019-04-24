@@ -3,5 +3,7 @@
 Este es el repositorio para el grupo Semillero 
 # Lideres
 Miquely Calvopiña 
+
 Dayanna Silva 
+
 Alex Chicaiza
