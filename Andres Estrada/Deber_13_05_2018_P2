@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package deber13_05_2018;
+import java.util.Locale;
+import java.util.Scanner;
+
+/**
+ *
+ * @author andre
+ */
+public class Deber13_05_2018 
+{
+
+ public static void main(String[] args) 
+    {
+     int n;
+     int r=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.printf("\nIngrese un numero para formar el cuadrado -> ");
+        n=sc.nextInt();
+        for(int i=1; i<=n;i++)
+        {
+            for(int j=1;j<=4;j++)
+            {
+               if(j==1)
+                {
+                    System.out.printf(" %d ",i);
+                }
+               if(j==2)
+               {
+                   System.out.printf(" %d ",i);
+               }
+               if(j==3)
+               {
+
+                   System.out.printf(" %d ",(i+i));//La logica del ejercicio data que la primera columna son los numeros desde 1 hasta n
+               }                          //La segunfa columna van imprimiendo dos veces 1 de ahi dos veces 2 hasta n
+                                                //La tercera columna es la suma de la primera columna mas la segunda columna
+                                                //la cuarta columna es la multiplicacion de la tercera columna
+               if(j==4)
+               {
+                   System.out.printf(" %d ",((i-1)*(i)));
+               }
+                
+            }
+            System.out.println();
+        }
+    }
+    
+}
