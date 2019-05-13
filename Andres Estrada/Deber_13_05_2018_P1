@@ -1,0 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package deber13_05_2018;
+import java.util.Locale;
+import java.util.Scanner;
+int fibonacci(int n);
+
+/**
+ *
+ * @author andre
+ */
+public class Deber13_05_2018 
+{
+
+ public static void main(String[] args) 
+    {
+        int n=0;
+        int m=1;
+        int k,r=0;
+        /*System.out.println("Ingrese un numero entero -> ");
+        System.out.println();*/// TODO code application logic here
+        Scanner sc=new Scanner(System.in);//Importar la librería pd:Luci Te Amo
+        System.out.printf("\nIngrese un numero para imprimir la serie -> ");
+        n=sc.nextInt();
+        
+        for(int i=1; i<=n;i++)
+        {
+            for(int j=1;j<=m;j++)
+            {
+                k=Fibonacci(j);//Llamada a la funcion Fibonacci, para el calculo en cada j 
+
+                System.out.printf("%d",k); //Impresion en cada linea de la serie de fibonacci
+            }
+            System.out.println();
+            m++;
+            
+           
+        }
+        for(int p=1;p<=n;p++)//Imprime la suma
+        {
+            r=r+Fibonacci(p);
+        }
+        System.out.printf("La suma de n=%d es: ",r);
+    
+}
+ private static int Fibonacci(int n)
+ {
+ int a=0,b=1,c;
+ for(int i=1;i<=n;i++)
+ {
+     c=a+b;
+     b=a;
+     a=c;
+ }
+ return a;
+}
