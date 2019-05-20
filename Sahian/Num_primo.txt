@@ -1,0 +1,73 @@
+package n.primos;
+
+import java.util.Scanner;
+
+
+public class NPrimos {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        int numero;
+        boolean bandera = false;
+        System.out.println("Ingrese número");
+        numero=sc.nextInt();
+        for (int i = numero-1; i >=2; i--) {
+            if(numero%i==0) {
+                bandera=true;
+                break;
+            }
+    
+       }
+        if (bandera){
+            System.out.println("No es primo");
+        }else{
+            System.out.println("Es primo");
+       }
+        int numero_up=numero + 1;
+        int numero_down=numero - 1;
+        
+        while(numero_down >=2){
+            boolean bandera_up=true;
+            for (int i = numero_up - 1; i >=2; i--) {
+                if( numero_up% i==0){
+                    bandera_up=false;
+                    break;
+                    
+                }
+                
+            }
+         boolean bandera_down=true;
+            for (int i = numero_down-1; i>=2; i--) {
+                if(numero_down%i==0){
+                    bandera_down=false;
+                    break;
+                    
+                }
+                
+            }
+            if(bandera_up){
+            System.out.println("El numero "+numero_up+" es primo");
+            }
+            if(bandera_down){
+                System.out.println("El numero"+numero_down+" es primo");
+            }
+            if (bandera_up || bandera_down){
+                break;
+            }
+            numero_up++;
+            numero_down--;
+        }
+            
+                
+                      
+    
+    } 
+    
+    
+    
+        
+        
+                
+    }
+    
