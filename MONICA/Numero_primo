@@ -1,0 +1,76 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package numeroprimo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Mónica
+ */
+public class Numeroprimo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner (System.in);
+        int numero;
+        boolean bandera = false;
+        System.out.println("Ingrese el numero:  ");
+        numero=sc.nextInt();
+         for (int i = numero-1; i>=2 ; i--) {
+             if (numero%i==0) {
+                 bandera=true;
+                 break;
+             }
+            
+        } 
+        if (bandera) {
+            System.out.println("No es Primo: " );
+            
+        }else {
+            System.out.println("Es primo: ");
+        return;
+        }
+        int num_up = numero +  1 ;
+        int num_down = numero -  1 ;
+
+        while (num_down >=2 ) {
+           
+            boolean flag_up =  true ;
+            for( int i=num_up-1 ;i>=2 ;i--) {
+                if (num_up % i ==  0 ) {
+                    flag_up =  false ;
+                    break ;
+                }
+            }
+
+           
+            boolean flag_down =  true ;
+            for ( int i =num_down-1; i>= 2;i --) {
+                if (num_down%i==0) {
+                    flag_down =  false ;
+                    break ;
+                }
+            }
+
+            if (flag_up) {
+                System.out.println ( " el numero " + num_up + " es primo " );
+            }
+            if (flag_down) {
+               System.out.println( " el numero " + num_down + " es primo " );
+            }
+            if (flag_up || flag_down) {
+                break ;
+            }
+            num_up ++ ;
+            num_down--;  
+ } 
+     } 
+     } 
+    
