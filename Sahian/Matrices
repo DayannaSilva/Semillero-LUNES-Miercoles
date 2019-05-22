@@ -1,0 +1,128 @@
+package matrices;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author personal
+ */
+public class Matrices {
+    private static Object math;
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      int[][] matriz= new int [4][3];//Declaro la matriz 1
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz[i][j]=(int) (Math.random()*(25+1));
+            }
+            
+        }
+        //imprimo la matriz 1
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("\t"+matriz [i][j]);
+                
+            }
+            System.out.println();
+            
+        }
+        
+        System.out.println(" ");
+        int[][] matriz2= new int [4][3];//Declaro la matriz 2
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz2[i][j]=(int) (Math.random()*(25+1));
+                             
+            }
+        }
+        //Imprimo la matriz 2
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("\t"+matriz2[i][j]);
+                
+            }
+            System.out.println();
+        }
+        System.out.println(" ");
+        int[][] sumaMatriz= new int [4][3];//Declaro la matriz sumaMatriz
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                sumaMatriz[i][j]= matriz[i][j]+matriz2[i][j];
+                
+            }
+           
+                   
+        }
+        //Imprimo la matriz sumaMatriz
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(sumaMatriz[i][j]);
+                
+            }
+            System.out.println(" ");
+            
+        }
+        System.out.println(" ");
+        //Declaro matrices de operaciones entre matriz1 y matriz2
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                sumaMatriz[i][j]= 3*matriz[i][j]-4*matriz2[i][j];
+                                                
+            }
+            
+          
+        }
+        //Imprimo operaciones de matrices
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(sumaMatriz[i][j]);
+                
+            }
+            System.out.println(" ");
+            
+        }
+      String[][]nombres= new String [2][2];//Declaro la matriz nombre
+      Scanner sc=new Scanner(System.in);//Declaro la función Scanner para leer datos
+      System.out.println("Ingrese nombres");
+      //Imprimo la matriz nombre
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("Ingrese Nombres"+i+" "+j+": ");
+                nombres[i][j]=sc.nextLine();
+                
+                
+            }
+            
+        }
+        String[][]apellidos= new String [2][2];//Declaro la matriz apellidos
+        System.out.println("Ingrese Apellidos");
+        //Imprimo la matriz apellidos
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("Ingrese Apellidos"+i+" "+j+": ");
+                apellidos[i][j]=sc.nextLine();
+                
+            }
+           
+            
+        }
+        System.out.println(" ");
+        //Imprimo la matriz nombres y la matriz apellidos concatenadas
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.println(nombres[i][j]+" "+apellidos[i][j]);
+                
+            }
+                     
+            
+        }
+        
+       
+    }
+    
+    
+    
+}
