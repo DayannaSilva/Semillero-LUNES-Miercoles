@@ -1,0 +1,134 @@
+ackage matriz;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Mónica
+ */
+public class Matriz {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        int [ ] [ ] matriz = new int [4] [3] ;
+        int [ ] [ ] matriz2 = new int[4][3];
+        int [ ] [ ] sumaMatriz = new int[4][3];
+        
+        //lleno la matriz 1 con numero ramdomicos
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz [i] [j]= (int)(Math.random()*25+1);
+            } 
+        }
+        // imprimo la matriz 1 
+        
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matriz [i][j]+" ");
+            }
+            System.out.println("");
+        }
+        
+        
+        System.out.println("");
+        
+        //Lleno la segunda Matriz
+        
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz2 [i] [j]= (int)(Math.random()*25+1);
+            } 
+        } //Imprimo la matriz 2
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matriz2 [i][j]+" ");
+                
+                
+            }
+            System.out.println("");
+        }
+        
+        System.out.println("");
+        // Se suma la Matriz 1 con la Matriz 2 
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                sumaMatriz [i] [j]= matriz [i][j] + matriz2[i][j];
+            } 
+        } //Se Imprime la sume de las matrices
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(sumaMatriz [i][j]+" ");
+        
+        }
+            System.out.println("");
+        }
+        
+       System.out.println("");
+         // Segunda Operacion entre matriz uno y matriz 2
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                sumaMatriz [i] [j]= 3*matriz [i][j] - 4*matriz2[i][j];
+            } 
+        } //Imprimo la Matriz resultante
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(sumaMatriz [i][j]+" ");
+        
+        }
+            System.out.println("");
+        }
+        System.out.println("");
+        Scanner sc=new Scanner ( System.in);
+        
+        
+        
+        
+        //Se crea una matriz para nombre, apellido y las union de las dos 
+        
+        
+        
+         System.out.println("");
+         String [ ] [ ] nombre = new String [2] [2] ;
+        String [ ] [ ] apellido = new String [2] [2] ;
+        String [ ] [ ] completo = new String [2] [2] ;
+        
+        
+        //Lleno la Matriz de nombres
+       
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("Ingrese nombre: "+i + "  " + j+": "); 
+                
+                nombre [i][j]= sc.nextLine();
+                
+            }
+        } 
+        //Lleno la matriz de apellidos 
+         System.out.println("");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("Ingrese apellido: "+i + "  " + j+": "); 
+                
+                apellido [i][j]= sc.nextLine();
+                
+            }
+            // imprimo el nombre y el apellido
+        }
+        System.out.println("");
+        
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.println(nombre [i][j]+ "  " + apellido[i][j]);
+                
+            }
+            
+        }
+        
+        
+        
+      
+    }
+}            
