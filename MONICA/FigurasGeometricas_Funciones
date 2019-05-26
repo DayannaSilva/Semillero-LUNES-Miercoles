@@ -1,0 +1,96 @@
+package figuras_geometricas_funciones;
+import java.util.Scanner;
+/**
+ *
+ * @author Monica Jaña
+ */
+public class Figuras_geometricas_funciones {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner (System.in);
+        float ladoCuadrado;
+        float baseTriangulo;
+        float alturaTriangulo;
+        float baseRectangulo;
+        float alturaRectangulo;
+        
+       // Pido el lado el valor del lado de un cuadrado
+        ladoCuadrado=pedirDato("Ingrese el lado del cuadrado: ");
+        System.out.println("El area del cuadrado es: "+ calcularAreaCuadrado(ladoCuadrado));
+        
+       //Imprimo el perimetro del cuadrado
+        System.out.println("El perimetro del cuadrado es: "+ calcularPerimetroCuadrado(ladoCuadrado));
+       
+        //pido que ingrese la base y la altura Triangulo
+        System.out.println( " ");
+        baseTriangulo=pedirDato("ingrese la base del Trianguloe:  ");
+        alturaTriangulo=pedirDato("ingrese la altura Del Triangulo:  " );
+        System.out.println("El area del Triangulo es: "+ calcularAreaTriangulo(baseTriangulo,alturaTriangulo));
+        
+        // Imprimo el perimetro del triangulo
+        System.out.println("El perimetro del Triangulo es: "+ calcularPerimetroTriangulo(baseTriangulo));
+        
+        // Pido datos para el area del rectangulo
+        System.out.println(" ");
+        baseRectangulo=pedirDato("ingrese la base del rectangulo:  " );
+        alturaRectangulo=pedirDato("ingrese la altura del rectangulo:  " );
+        System.out.println("El area del Triangulo es: "+ calcularAreaRectangulo(baseRectangulo,alturaRectangulo));
+        
+        //Imprimir el perimetro del rectangulo
+        System.out.println("El perimetro del Rectangulo es: "+ calcularPerimetroRectangulo(baseTriangulo,alturaRectangulo));
+        
+  
+    }
+    //funcion para declarar el area de un cuadrado con un numero flotantete
+    public static float calcularAreaCuadrado (float lado){
+        
+        float resultado=0;
+        resultado=lado*lado;
+        return resultado;
+    } 
+    //Funcion para calcular el perimetro de un cuadrado
+    
+     public static float calcularPerimetroCuadrado (float lado){
+        
+        float resultado=0;
+        resultado=lado*4;
+        return resultado;
+    } 
+    
+    //Funcion para calcular el area de un triangulo
+    public static float calcularAreaTriangulo (float base, float altura){
+        float area=0;
+        area = (base*altura)/2;
+        return area;
+    }
+    // Funcion para calcular el perimetro del Triangulo
+    public static float calcularPerimetroTriangulo (float lado){
+        float perimetro=0;
+        perimetro = lado*3;
+        return perimetro;
+        
+    }
+    // Funcion para calcular el area de un rectangulo
+     public static float calcularAreaRectangulo (float base, float altura){
+        float area=0;
+        area = (base*altura);
+        return area;
+}
+      public static float calcularPerimetroRectangulo (float base, float altura){
+        float perimetro=0;
+        perimetro = 2*base+(2*altura) ;
+        return perimetro;
+      }
+      
+     public static float pedirDato ( String mensaje){
+         
+        Scanner sc=new Scanner (System.in);
+        float numero=0;
+         System.out.println( mensaje );
+         numero=sc.nextFloat();
+         return  numero;
+    } 
