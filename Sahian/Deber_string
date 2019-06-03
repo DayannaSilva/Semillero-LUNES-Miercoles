@@ -1,0 +1,26 @@
+package deber_string;
+
+public class Deber_string {
+
+   
+    public static void main(String[] args) {
+        String cadena="Universidad de las Fuerzas Armadas";
+        char[]arrVocales= {'a','e','i','o','u'};
+        int[]arrContadorVocales={0,0,0,0,0};
+        int contador=0;
+        for (int i = 0; i <cadena.length();i++) {
+            char vocal=cadena.charAt(i);
+            for (int j = 0; j < 5; j++) {
+                if (vocal==arrVocales[j]){
+                    arrContadorVocales[j]++;
+                    contador++;
+                }
+            }
+        }
+        for (int i = 0; i < 5; i++) {
+            System.out.println("El numero de "+arrVocales[i]+ " es: "+arrContadorVocales[i]);
+            
+        }
+    }
+    
+}
