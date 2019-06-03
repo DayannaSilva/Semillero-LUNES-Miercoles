@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package deber;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Monica
+ */
+public class Deber {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Scanner sc=new Scanner (System.in);
+        String cadena;
+        String cadena_original;
+        System.out.println("Ingrese una cadena -> ");
+        cadena=sc.nextLine();
+        //Convierte lla frase en minuscula
+        cadena_original=cadena;
+        cadena = cadena.toLowerCase();
+        String [] arrCadena = cadena.split("");
+        int contvocala=0,contvocale=0,contvocali=0,contvocalo=0,contvocalu=0;
+        
+        for (int i = 0; i < arrCadena.length; i++) {
+            // comparar cadena 
+            if ("a".equals(arrCadena[i])) {
+                contvocala++;  
+             }   else if ("e".equals(arrCadena[i])){
+                 contvocale++;
+             }else if("i".equals(arrCadena[i])){
+                 contvocali++;
+             }else if("o".equals(arrCadena[i])){
+                 contvocalo++;
+             }else if("u".equals(arrCadena[i])){
+                 contvocalu++;
+             }
+            }
+        //Imprime el conteo de las vocales 
+        System.out.println("EL NUMERO DE a EN LA FRASE "+cadena_original+" ES:"+contvocala);
+        System.out.println("EL NUMERO DE a EN LA FRASE "+cadena_original+" ES:"+contvocale);
+        System.out.println("EL NUMERO DE a EN LA FRASE "+cadena_original+" ES:"+contvocali);
+        System.out.println("EL NUMERO DE a EN LA FRASE "+cadena_original+" ES:"+contvocalo);
+        System.out.println("EL NUMERO DE a EN LA FRASE "+cadena_original+" ES:"+contvocalu);
+    }
+    
+}
