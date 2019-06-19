@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package taller;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Mónica
+ */
+public class Taller {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+          Scanner sc= new Scanner (System.in);
+          String dato;
+   System.out.println("Ingrese una cadena de datos: ");
+   dato=sc.nextLine();
+   
+        Validar (dato);
+    }
+    
+    public  static void Validar (String dato) {
+    
+   String [] arrCadena = dato.split(" ");
+            if (dato.equals(arrCadena)) { 
+                Integer.parseInt(dato);
+                System.out.println("La cadena es un numero "+ dato);
+    } 
+            else 
+                System.out.println("No es un numero");
+     
+                    
+          
+}
+}
