@@ -1,0 +1,74 @@
+package ejercicio_serie;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author personal
+ */
+public class Ejercicio_serie {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        String rango;
+        System.out.println("Ingrese rango");
+        rango=sc.nextLine();
+        String[]arrRango= rango.split("%");
+        int inicio=Integer.parseInt(arrRango[0]);
+        int final1=Integer.parseInt(arrRango[1]);
+        boolean nprimo;      
+        for (int i = inicio; i <= final1; i++) {
+               System.out.print(" "+i+" ");
+        }
+        System.out.println("");
+        System.out.println("");
+        for (int i = inicio; i <= final1; i++) {
+            nprimo=true;
+               for (int j =2; j<i; j++) {
+            if(i%j==0) {
+                nprimo=false;
+            }
+            
+            }
+               if(nprimo){
+                System.out.print(" "+i+" ");
+            }
+        }
+        System.out.println("");
+        System.out.println("");
+        for (int i = inicio; i <= final1; i++) {
+            nprimo=true;
+               for (int j =2; j<i; j++) {
+            if(i%j==0) {
+                nprimo=false;
+            }
+            
+            }
+               if(nprimo){
+                String numeroString=Integer.toString(i);
+                String [ ] numero_separado=numeroString.split("");
+                int num1=Integer.parseInt(numero_separado[0]);
+                int num2=Integer.parseInt(numero_separado[1]);
+                int suma=num1+num2;
+                if(Funcion_Primo(suma))
+                {
+                    System.out.print(" "+i+" ");
+                }
+            }
+        }
+    }
+     public static boolean Funcion_Primo(int numero)
+ {
+  int contador = 2;
+  boolean primo=true;
+  while ((primo) && (contador!=numero)){
+    if (numero % contador == 0)
+      primo = false;
+    contador++;
+  }
+  return primo;
+  }
+}
