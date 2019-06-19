@@ -1,0 +1,72 @@
+package binomio;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author personal
+ */
+public class Binomio {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        String valor_potencia;
+        int potencia;
+        do
+        {
+        System.out.printf("\nIngrese la potencia a la cual esta elevado el binomio -> ");
+        valor_potencia=sc.nextLine();
+        }while(isNumeric(valor_potencia));
+        potencia=Integer.parseInt(valor_potencia);
+        int coeficiente;
+        int potencia_a;
+        for(int i=0;i<=potencia;i++)
+        {  
+         coeficiente=(calculo_factorial(potencia))/((calculo_factorial(i))*(calculo_factorial(potencia-i)));
+         potencia_a=potencia-i;
+         if(i==0)
+         {
+           System.out.printf("+ a^%d",potencia_a);
+         }
+         else 
+             if(i==potencia)
+             {
+                 System.out.printf("+ b^%d",i);
+             }
+         else
+              System.out.printf("+ %da^%d b^%d",coeficiente,potencia_a,i);
+         
+            
+        }
+        // TODO code application logic here
+    }
+    public static int calculo_factorial(int potencia)
+    {
+        int factorial=1;
+          while (potencia!=0) 
+          {
+          factorial=factorial*potencia;
+          potencia--;
+          }
+         
+         return factorial;
+    }  
+    
+    private static boolean isNumeric(String cadena)
+    {
+	try {
+		Integer.parseInt(cadena);
+		return true;
+	} catch (NumberFormatException nfe){
+            System.out.println("jgkhjk");
+            return false;
+	}
+    }
+    
+    
+    
+}
+   
