@@ -44,82 +44,8 @@ public class GAME {
        int [] intSumaCards_2= new int [3];
        intSumaCards_2 = arraySumaCard(intCards_3);
        intSumaCards=TransformJQK(intSumaCards_2);
-       
-        if(intCards_2[0]==intCards_2[1] && intCards_2[1]==intCards_2[2])
-        {
-            System.out.println("Ronda");
-        }
-        else
-            if(intCards_2[0]==intCards_2[1])
-            {
-                                
-                if((intCards_2[0]== 7 && intCards_2[2]=='j') || (intCards_2[0]== 'j' && intCards_2[2]=='q') || (intCards_2[0]== 'q' && intCards_2[2]=='k'))
-                {
-                    System.out.println("Limpia");
-                }
-                else
-                    
-                if(intCards_2[0]+1 == intCards_2[2])
-                {
-                    System.out.println("Limpia");
-                }
-                else
-                {
-                    System.out.println("Queda una carta en la mesa");
-                }                    
-
-            }
-            else
-                if(intCards_2[1]==intCards_2[2])
-                {
-                if((intCards_2[1]== 7 && intCards_2[0]=='j') || (intCards_2[1]== 'j' && intCards_2[0]=='q') || (intCards_2[1]== 'q' && intCards_2[0]=='k'))
-                {
-                    System.out.println("Limpia");
-                }
-                else                    
-                    if(intCards_2[1]+1 == intCards_2[0])
-                    {
-                        System.out.println("Limpia");
-                    }
-                    else
-                    {
-                    System.out.println("Queda una carta en la mesa");
-                    }  
-                }
-                else
-                if(intCards_2[0]==intCards_2[2])
-                {
-                if((intCards_2[0]== 7 && intCards_2[1]=='j') || (intCards_2[0]== 'j' && intCards_2[1]=='q') || (intCards_2[0]== 'q' && intCards_2[1]=='k'))
-                {
-                    System.out.println("Limpia");
-                }
-                else                    
-                    if(intCards_2[0]+1 == intCards_2[1])
-                    {
-                        System.out.println("Limpia");
-                    }
-                    else
-                    {
-                    System.out.println("Queda una carta en la mesa");
-                    }  
-                }
-                else
-                    if(intCards_2[2]==intSumaCards[0])
-                    {
-                        System.out.println("Limpia");
-                    }
-                    else
-                         if(intCards_2[0]==intSumaCards[1])
-                         {
-                             System.out.println("Limpia");
-                         }
-                         else
-                             if(intCards_2[1]==intSumaCards[2])
-                             {
-                                 System.out.println("Limpia");
-                             }
-                             else
-                                 System.out.println("No hay juego");
+       voidGameFinished(intCards_2,intSumaCards);
+        
         
     
                     
@@ -249,6 +175,85 @@ public class GAME {
 
 
  }
+ public static void voidGameFinished(int [] intCards_2,int [] intSumaCards)
+ {
+     if(intCards_2[0]==intCards_2[1] && intCards_2[1]==intCards_2[2])
+        {
+            System.out.println("Ronda");
+        }
+        else
+            if(intCards_2[0]==intCards_2[1])
+            {
+                                
+                if((intCards_2[0]== 7 && intCards_2[2]=='j') || (intCards_2[0]== 'j' && intCards_2[2]=='q') || (intCards_2[0]== 'q' && intCards_2[2]=='k'))
+                {
+                    System.out.println("Limpia");
+                }
+                else
+                    
+                if(intCards_2[0]+1 == intCards_2[2])
+                {
+                    System.out.println("Limpia");
+                }
+                else
+                {
+                    System.out.println("Queda una carta en la mesa");
+                }                    
+
+            }
+            else
+                if(intCards_2[1]==intCards_2[2])
+                {
+                if((intCards_2[1]== 7 && intCards_2[0]=='j') || (intCards_2[1]== 'j' && intCards_2[0]=='q') || (intCards_2[1]== 'q' && intCards_2[0]=='k'))
+                {
+                    System.out.println("Limpia");
+                }
+                else                    
+                    if(intCards_2[1]+1 == intCards_2[0])
+                    {
+                        System.out.println("Limpia");
+                    }
+                    else
+                    {
+                    System.out.println("Queda una carta en la mesa");
+                    }  
+                }
+                else
+                if(intCards_2[0]==intCards_2[2])
+                {
+                if((intCards_2[0]== 7 && intCards_2[1]=='j') || (intCards_2[0]== 'j' && intCards_2[1]=='q') || (intCards_2[0]== 'q' && intCards_2[1]=='k'))
+                {
+                    System.out.println("Limpia");
+                }
+                else                    
+                    if(intCards_2[0]+1 == intCards_2[1])
+                    {
+                        System.out.println("Limpia");
+                    }
+                    else
+                    {
+                    System.out.println("Queda una carta en la mesa");
+                    }  
+                }
+                else
+                    if(intCards_2[2]==intSumaCards[0])
+                    {
+                        System.out.println("Limpia");
+                    }
+                    else
+                         if(intCards_2[0]==intSumaCards[1])
+                         {
+                             System.out.println("Limpia");
+                         }
+                         else
+                             if(intCards_2[1]==intSumaCards[2])
+                             {
+                                 System.out.println("Limpia");
+                             }
+                             else
+                                 System.out.println("No hay juego");
+ }
 
     
 }
+
