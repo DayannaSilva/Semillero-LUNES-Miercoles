@@ -20,6 +20,7 @@ public class GAME {
        String stringData; 
        int [] intCards= new int [3];
        int [] intCards_2=new int [3];
+       int [] intCards_3=new int [3];
        int [] intSumaCards = new int [3];
 
        
@@ -38,8 +39,12 @@ public class GAME {
 
        }while(!(stringValidation(stringData)) || !(validationCard(stringData)));
        intCards=TransformarVector(stringData, intCards);
-       intCards_2=arrayOrdenado(intCards);
-       intSumaCards=arraySumaCard(intCards_2);
+       intCards_3=arrayOrdenado(intCards);
+       intCards_2=TransformJQK(intCards_3);
+       int [] intSumaCards_2= new int [3];
+       intSumaCards_2 = arraySumaCard(intCards_3);
+       intSumaCards=TransformJQK(intSumaCards_2);
+       
         if(intCards_2[0]==intCards_2[1] && intCards_2[1]==intCards_2[2])
         {
             System.out.println("Ronda");
@@ -47,38 +52,55 @@ public class GAME {
         else
             if(intCards_2[0]==intCards_2[1])
             {
+                                
+                if((intCards_2[0]== 7 && intCards_2[2]=='j') || (intCards_2[0]== 'j' && intCards_2[2]=='q') || (intCards_2[0]== 'q' && intCards_2[2]=='k'))
+                {
+                    System.out.println("Limpia");
+                }
+                else
+                    
                 if(intCards_2[0]+1 == intCards_2[2])
                 {
                     System.out.println("Limpia");
                 }
                 else
                 {
-                    System.out.println("Queda en la mesa: "+intCards[2]);
+                    System.out.println("Queda una carta en la mesa");
                 }                    
 
             }
             else
                 if(intCards_2[1]==intCards_2[2])
                 {
+                if((intCards_2[1]== 7 && intCards_2[0]=='j') || (intCards_2[1]== 'j' && intCards_2[0]=='q') || (intCards_2[1]== 'q' && intCards_2[0]=='k'))
+                {
+                    System.out.println("Limpia");
+                }
+                else                    
                     if(intCards_2[1]+1 == intCards_2[0])
                     {
                         System.out.println("Limpia");
                     }
                     else
                     {
-                        System.out.println("Queda en la mesa: "+intCards[0]);
+                    System.out.println("Queda una carta en la mesa");
                     }  
                 }
                 else
                 if(intCards_2[0]==intCards_2[2])
                 {
+                if((intCards_2[0]== 7 && intCards_2[1]=='j') || (intCards_2[0]== 'j' && intCards_2[1]=='q') || (intCards_2[0]== 'q' && intCards_2[1]=='k'))
+                {
+                    System.out.println("Limpia");
+                }
+                else                    
                     if(intCards_2[0]+1 == intCards_2[1])
                     {
                         System.out.println("Limpia");
                     }
                     else
                     {
-                        System.out.println("Queda en la mesa: "+intCards[1]);
+                    System.out.println("Queda una carta en la mesa");
                     }  
                 }
                 else
@@ -98,6 +120,8 @@ public class GAME {
                              }
                              else
                                  System.out.println("No hay juego");
+        
+    
                     
         // TODO code application logic here
     }
@@ -111,6 +135,27 @@ public class GAME {
      }
      else
          return false;
+ }
+ public static int [] TransformJQK(int [] arrayCards)
+ {
+  
+     for(int i=0; i<3;i++)
+     {
+         if(arrayCards[i]==8)
+         {
+             arrayCards[i]='j';
+         }
+             if(arrayCards[i]==9)
+         {
+             arrayCards[i]='q';
+         }
+             if(arrayCards[i]==10)
+         {
+             arrayCards[i]='k';
+         }
+     }
+     return arrayCards;
+     
  }
  public static boolean validationCard(String stringCard)
  {
@@ -199,10 +244,11 @@ public class GAME {
     intSuma[0]=arrayCards_2[0]+arrayCards_2[1];
     intSuma[1]=arrayCards_2[1]+arrayCards_2[2];
     intSuma[2]=arrayCards_2[0]+arrayCards_2[2];
+
     return intSuma;
+
+
  }
 
     
 }
-
-
