@@ -5,6 +5,7 @@
  */
 package pkg40.game;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -21,9 +22,10 @@ public class GAME {
        int [] intCards= new int [3];
        int [] intCards_2=new int [3];
        int [] intCards_3=new int [3];
+       int [] intCards_4=new int [3];
        int [] intSumaCards = new int [3];
-
-       
+       int [] intSumaCards_2= new int [3];
+     
        Scanner Deck = new Scanner(System.in);
        do
        {
@@ -40,11 +42,12 @@ public class GAME {
        }while(!(stringValidation(stringData)) || !(validationCard(stringData)));
        intCards=TransformarVector(stringData, intCards);
        intCards_3=arrayOrdenado(intCards);
+       printCards(intCards_3);
+       intCards_4=TransformJQK(intCards_3);
        intCards_2=TransformJQK(intCards_3);
-       int [] intSumaCards_2= new int [3];
        intSumaCards_2 = arraySumaCard(intCards_3);
        intSumaCards=TransformJQK(intSumaCards_2);
-       voidGameFinished(intCards_2,intSumaCards);
+       voidGameFinished(intCards_2,intSumaCards,intCards_3);
         
         
     
@@ -67,6 +70,7 @@ public class GAME {
   
      for(int i=0; i<3;i++)
      {
+
          if(arrayCards[i]==8)
          {
              arrayCards[i]='j';
@@ -175,13 +179,24 @@ public class GAME {
 
 
  }
- public static void voidGameFinished(int [] intCards_2,int [] intSumaCards)
+ public static void voidGameFinished(int [] intCards_2,int [] intSumaCards,int [] intCards_3)
  {
      if(intCards_2[0]==intCards_2[1] && intCards_2[1]==intCards_2[2])
         {
             System.out.println("Ronda");
         }
         else
+              if((intCards_3[0]==8 && intCards_3[1]==9 && intCards_3[2]==10))
+            {
+                    System.out.println("Limpia");
+            }
+            else
+              if((intCards_3[0]+1 == intCards_3[1]) && (intCards_3[1]+1==intCards_3[2]))
+            {
+                    System.out.println("Limpia");
+            }
+            else
+                  
             if(intCards_2[0]==intCards_2[1])
             {
                                 
@@ -251,9 +266,10 @@ public class GAME {
                                  System.out.println("Limpia");
                              }
                              else
+                             {
                                  System.out.println("No hay juego");
+                             }
  }
 
     
 }
-
